@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.marc.final_project.Main4Activity"
+    android:orientation="vertical"
+    android:paddingTop="10dp">
+
+    <ImageView
+        android:id="@+id/textArea"
+        android:layout_width="350dp"
+        android:layout_height="240dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/myrect"
+        android:elevation="20dp"/>
+
+    <TextView
+        android:id="@+id/user_font_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TESTER"
+        android:textSize="40sp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="90dp"
+        android:elevation="20dp"/>
+
+    <Button
+        android:id="@+id/bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/textArea"
+        android:text="Avenir Next Bold"
+        android:textSize="20sp"
+        android:onClick="boldText"/>
+    <Button
+        android:id="@+id/italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/bold"
+        android:text="Avenir Next Italic"
+        android:textSize="20sp"
+        android:onClick="italicText"/>
+    <Button
+        android:id="@+id/regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/italic"
+        android:text="Avenir Next Regular"
+        android:textSize="20sp"
+        android:onClick="regularText"/>
+    <Button
+        android:id="@+id/thin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/regular"
+        android:text="Avenir Next Thin"
+        android:textSize="20sp"
+        android:onClick="thinText"/>
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="OK"
+        android:textSize="20sp"
+        android:layout_below="@id/thin"
+        android:layout_centerHorizontal="true"
+        android:onClick="OK"/>
+
+</RelativeLayout>

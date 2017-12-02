@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +8,180 @@
     tools:context="com.example.marc.final_project.MainActivity">
 
     <TextView
+        android:id="@+id/text_editor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="8dp"
+        android:text="@string/text_editor"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"/>
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/whiteBackground"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="5dp"
+        android:tag="white"
+        android:elevation="15dp"
+        android:visibility="invisible"
+        android:layout_below="@id/text_editor"
+        android:layout_centerInParent="true"
+        android:background="@drawable/myrect"/>
+
+    <Button
+        android:id="@+id/menu_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/ic_menu_add"
+        android:backgroundTint="@android:color/black"
+        android:onClick="menuClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/add_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_text"
+        android:visibility="invisible"
+        android:onClick="sendText"
+        android:stateListAnimator="@null"
+        android:elevation="20dp"/>
+
+    <TextView
+        android:id="@+id/user_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="TESTER"
+        android:textColor="@android:color/black"
+        android:textSize="50sp"
+        android:elevation="20dp"/>
+
+    <Button
+        android:id="@+id/text_size_button"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:text="@string/size"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="visible"
+        android:onClick="SizeChange"
+        android:layout_toStartOf="@id/move_button"
+        android:layout_above="@id/font_button"/>
+
+    <SeekBar
+        android:id="@+id/size_changer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_above="@id/move_button"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"/>
+
+    <Button
+        android:id="@+id/move_button"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_toStartOf="@id/menu_button"
+        android:layout_toRightOf="@id/text_size_button"
+        android:layout_above="@id/font_button"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="MoveChange"
+        android:text="MOVE"/>
+
+    <Button
+        android:id="@+id/color_button"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:text="@string/color"
+        android:layout_toEndOf="@id/menu_button"
+        android:layout_above="@id/font_button"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="ColorChange"/>
+
+    <Button
+        android:id="@+id/tilt_button"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@id/color_button"
+        android:layout_above="@id/font_button"
+        android:text="@string/tilt"
+        android:onClick="TiltChange"/>
+
+    <SeekBar
+        android:id="@+id/tilt_changer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_above="@id/tilt_button"
+        android:max="360"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/font_button"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:text="@string/font"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:onClick="FontChange"/>
+
+    <RelativeLayout
+        android:id="@+id/move_Group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/whiteBackground"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/move_left"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/arrow"
+            android:rotation="-90"
+            android:layout_marginEnd="20dp"
+            android:onClick="moveLeft"/>
+        <Button
+            android:id="@+id/move_up"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/arrow"
+            android:layout_toEndOf="@id/move_left"
+            android:layout_marginEnd="20dp"
+            android:onClick="moveUp"/>
+        <Button
+            android:id="@+id/move_down"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/arrow"
+            android:layout_toEndOf="@id/move_up"
+            android:rotation="180"
+            android:layout_marginEnd="20dp"
+            android:onClick="moveDown"/>
+        <Button
+            android:id="@+id/move_right"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/arrow"
+            android:layout_toEndOf="@id/move_down"
+            android:rotation="90"
+            android:layout_marginEnd="20dp"
+            android:onClick="moveRight"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

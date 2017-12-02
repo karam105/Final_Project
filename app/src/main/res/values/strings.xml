@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">final_project</string>
+    <string name="text_editor">Text Editor</string>
+    <string name="add_text">Add Text</string>
+    <string name="size">SIZE</string>
+    <string name="color">COLOR</string>
+    <string name="tilt">TILT</string>
+    <string name="font">FONT</string>
+    <string name="enter_you_text_here">Enter you text here</string>
+    <string name="finished">FINISHED</string>
+    <string name="text_color">Text Color</string>
+    <string name="background_text">Background text</string>
 </resources>
