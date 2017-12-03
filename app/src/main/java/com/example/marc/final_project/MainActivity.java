@@ -3,6 +3,7 @@ package com.example.marc.final_project;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.icu.text.UnicodeSetSpanner;
 import android.media.Image;
 import android.os.Debug;
@@ -23,6 +24,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Type;
 import java.nio.channels.SelectionKey;
 
 public class MainActivity extends AppCompatActivity
@@ -279,6 +281,36 @@ public class MainActivity extends AppCompatActivity
                 user_text.setText(text);
                 user_text.setTextColor(color);
                 user_text.setBackgroundColor(background_color);
+            }
+        }
+
+        if(requestCode == REQUEST_FONT)
+        {
+            if(resultCode == RESULT_OK)
+            {
+                Bundle extras = data.getExtras();
+                int fontNumber = extras.getInt("Font");
+
+                if (fontNumber == 1)
+                {
+                    Typeface boldFont = getResources().getFont(R.font.avenir_next_bold);
+                    user_text.setTypeface(boldFont);
+                }
+                else if (fontNumber == 2)
+                {
+                    Typeface italicFont = getResources().getFont(R.font.avenir_next_italic);
+                    user_text.setTypeface(italicFont);
+                }
+                else if (fontNumber == 3)
+                {
+                    Typeface regularFont = getResources().getFont(R.font.avenir_next_regular);
+                    user_text.setTypeface(regularFont);
+                }
+                else if (fontNumber == 4)
+                {
+                    Typeface thinFont = getResources().getFont(R.font.avenir_next_thin);
+                    user_text.setTypeface(thinFont);
+                }
             }
         }
     }
