@@ -36,8 +36,50 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/titles"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="273dp"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:id="@+id/R"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/G"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/R"
+            android:text="G"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/B"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/G"
+            android:text="B"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/B"
+            android:text="A"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/text_color_group"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="invisible"
@@ -46,31 +88,35 @@
 
         <SeekBar
             android:id="@+id/text_red_bar"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"/>
         <SeekBar
             android:id="@+id/text_green_bar"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+            android:layout_marginTop="5dp"
             android:layout_below="@id/text_red_bar"/>
         <SeekBar
             android:id="@+id/text_blue_bar"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
             android:layout_below="@id/text_green_bar"/>
         <SeekBar
             android:id="@+id/text_alpha_bar"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_below="@id/text_blue_bar"/>
+            android:layout_below="@id/text_blue_bar"
+            android:layout_marginTop="10dp"
+            android:progress="100"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -84,34 +130,34 @@
 
         <SeekBar
             android:id="@+id/background_red_bar"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:progress="100"/>
+            android:layout_marginRight="40dp"/>
         <SeekBar
             android:id="@+id/background_green_bar"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_below="@id/background_red_bar"
-            android:progress="100"/>
+            android:layout_marginTop="5dp"/>
         <SeekBar
             android:id="@+id/background_blue_bar"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_below="@id/background_green_bar"
-            android:progress="100"/>
+            android:layout_marginTop="10dp"/>
         <SeekBar
             android:id="@+id/background_alpha_bar"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_below="@id/background_blue_bar"/>
+            android:layout_below="@id/background_blue_bar"
+            android:layout_marginTop="10dp"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -121,7 +167,7 @@
         android:orientation="horizontal"
         android:background="@android:color/darker_gray"
         android:layout_centerInParent="true"
-        android:layout_below="@id/background_color_group">
+        android:layout_below="@id/text_color_group">
 
         <Button
             android:id="@+id/color_text"

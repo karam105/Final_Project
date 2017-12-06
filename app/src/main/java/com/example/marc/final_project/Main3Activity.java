@@ -13,6 +13,7 @@ public class Main3Activity extends AppCompatActivity
 {
     RelativeLayout text_color_group;
     RelativeLayout background_color_group;
+    RelativeLayout titles;
     TextView user_color_text;
 
     SeekBar text_sbR;
@@ -38,6 +39,7 @@ public class Main3Activity extends AppCompatActivity
 
         text_color_group = (RelativeLayout) findViewById(R.id.text_color_group);
         background_color_group = (RelativeLayout) findViewById(R.id.background_color_group);
+        titles = (RelativeLayout) findViewById(R.id.titles);
         user_color_text = (TextView) findViewById(R.id.user_color_text);
 
         text_sbR = (SeekBar) findViewById(R.id.text_red_bar);
@@ -49,6 +51,9 @@ public class Main3Activity extends AppCompatActivity
         background_sbG = (SeekBar) findViewById(R.id.background_green_bar);
         background_sbB = (SeekBar) findViewById(R.id.background_blue_bar);
         background_alpha = (SeekBar) findViewById(R.id.background_alpha_bar);
+
+        text_seekA = text_alpha.getProgress();
+        background_seekA = background_alpha.getProgress();
 
         Intent intent = getIntent();
         String text = intent.getStringExtra("Text");
@@ -149,24 +154,26 @@ public class Main3Activity extends AppCompatActivity
     public void changeColor(View view)
     {
         text_color_group.setVisibility(View.VISIBLE);
+        titles.setVisibility(View.VISIBLE);
         background_color_group.setVisibility(View.INVISIBLE);
     }
 
     public void backgroundChange(View view)
     {
         background_color_group.setVisibility(View.VISIBLE);
+        titles.setVisibility(View.VISIBLE);
         text_color_group.setVisibility(View.INVISIBLE);
     }
 
     private void changeTextColor()
     {
-        text_color = Color.rgb(text_seekR /100, text_seekG /100, text_seekB /100);
+        text_color = Color.argb(text_seekA /100, text_seekR /100, text_seekG /100, text_seekB /100);
         user_color_text.setTextColor(text_color);
     }
 
     private void changeBackgroundColor()
     {
-        background_color = Color.rgb(background_seekR /100, background_seekG /100, background_seekB /100);
+        background_color = Color.argb(background_seekA /100,background_seekR /100, background_seekG /100, background_seekB /100);
         user_color_text.setBackgroundColor(background_color);
     }
 
